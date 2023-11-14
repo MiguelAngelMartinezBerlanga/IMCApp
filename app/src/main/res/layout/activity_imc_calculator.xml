@@ -157,17 +157,16 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPeso"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="220dp"
         android:layout_marginLeft="30dp"
-       android:layout_marginVertical="220dp"
+        android:gravity="center"
         app:cardBackgroundColor="@color/bg_comp"
         app:cardCornerRadius="16dp"
-        android:gravity="center"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -190,30 +189,42 @@
                 ></TextView>
 
             <TextView
+                android:id="@+id/tvPeso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:text="60kg"
+                android:text="50 kg"
                 android:textSize="38sp"
                 android:textStyle="bold"
 
 
                 />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnSubtractAge"
+            <!--            liner layout de los botenes + y menos -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_remove"
-                app:backgroundTint="@color/bg_fab"
-                app:tint="@color/white"
-                android:contentDescription="Boton menos"
-                />
 
+                >
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubtractPesoMenos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Boton menos"
+                    android:src="@drawable/ic_remove"
+                    app:backgroundTint="@color/bg_fab"
+                    app:tint="@color/white" />
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubtractPesoMas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
+                    android:contentDescription="Boton menos"
+                    android:src="@drawable/ic_add"
+                    app:backgroundTint="@color/bg_fab"
+                    app:tint="@color/white" />
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -221,6 +232,77 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginVertical="220dp"
+        android:gravity="center"
+        app:cardBackgroundColor="@color/bg_comp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardViewPeso">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="EDAD"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+
+                ></TextView>
+
+            <TextView
+                android:id="@+id/tvEdad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 años"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubtractEdadMenos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Boton menos"
+                    android:src="@drawable/ic_remove"
+                    app:backgroundTint="@color/bg_fab"
+                    app:tint="@color/white" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSubtractEdadMas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:contentDescription="Boton menos"
+                    android:src="@drawable/ic_add"
+                    app:backgroundTint="@color/bg_fab"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 
 
