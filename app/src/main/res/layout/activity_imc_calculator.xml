@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toEndOf="@+id/viewFemale"
         app:cardBackgroundColor="@color/bg_comp"
         app:cardCornerRadius="16dp"
@@ -64,6 +64,7 @@
         app:layout_constraintStart_toEndOf="@+id/viewMale"
         app:cardBackgroundColor="@color/bg_comp"
         app:cardCornerRadius="16dp"
+
         >
 
         <LinearLayout
@@ -107,6 +108,8 @@
         app:cardBackgroundColor="@color/bg_comp"
         app:cardCornerRadius="16dp"
         app:layout_goneMarginTop="32dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
 
         >
 
@@ -305,6 +308,29 @@
     </androidx.cardview.widget.CardView>
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/bg_button"
+        android:contentDescription="hola"
+        android:text="@string/calcular"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
+
+
+        >
+
+
+    </androidx.appcompat.widget.AppCompatButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,7 @@ class ImcCalculator : AppCompatActivity() {
     private lateinit var tvEdad: TextView
     private lateinit var btnSubtractEdadMenos : FloatingActionButton
     private lateinit var btnSubtractEdadMas : FloatingActionButton
+    private lateinit var btnCalcular : Button
 
     private var isMaleSelected: Boolean = false
     private var isFemaleSelected: Boolean = false
@@ -48,6 +49,7 @@ class ImcCalculator : AppCompatActivity() {
         tvEdad = findViewById(R.id.tvEdad)
         btnSubtractEdadMenos = findViewById(R.id.btnSubtractEdadMenos)
         btnSubtractEdadMas = findViewById(R.id.btnSubtractEdadMas)
+        btnCalcular = findViewById(R.id.btnCalcular)
 
     }
 
