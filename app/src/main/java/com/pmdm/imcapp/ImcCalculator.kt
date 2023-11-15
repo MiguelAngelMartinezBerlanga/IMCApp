@@ -1,5 +1,6 @@
 package com.pmdm.imcapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -29,6 +30,7 @@ class ImcCalculator : AppCompatActivity() {
     private var isFemaleSelected: Boolean = false
     private var pesoActual:Int = 50
     private var edadActual: Int = 20
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc_calculator)
@@ -67,16 +69,16 @@ class ImcCalculator : AppCompatActivity() {
         }
         rsHeight.addOnChangeListener { _, value, _ ->
             //tvHeight.text = value.toString()
-            tvHeight.text = DecimalFormat("#.##").format(value) + " cm"
+            tvHeight.text = DecimalFormat("#.##").format(value)
         }
 
         btnSubtractPesoMas.setOnClickListener{
-            pesoActual +=1
-            setPeso()
+
+            setPeso(+1)
         }
         btnSubtractPesoMenos.setOnClickListener {
-           pesoActual -=1
-            setPeso()
+
+            setPeso(-1)
         }
         btnSubtractEdadMas.setOnClickListener {
             edadActual +=1
@@ -88,20 +90,50 @@ class ImcCalculator : AppCompatActivity() {
             setEdad()
         }
 
+        btnCalcular.setOnClickListener {
+            CalculateIMC()
+            navigate2result()
+
+
+        }
+
     }
 
+    fun navigate2result(){
+        var num= CalculateIMC()
+        val intent = Intent(this,ResultadoIMC::class.java)
+        intent.putExtra("Resultado", num)
+        startActivity(intent)
 
-    fun setPeso( ){
-//        val textoPeso = tvPeso.text.toString().toInt()+ num
-//        pesoActual=textoPeso
-//        tvPeso.text = pesoActual.toString()
 
-        tvPeso.setText(pesoActual.toString() + " kg")
+    }
+
+    fun CalculateIMC():Double{
+        var altura :Double = tvHeight.text.toString().toDouble()
+        altura /= 100
+       var peso : Double = tvPeso.text.toString().toDouble()
+
+       var resultado:Double = peso/(altura*altura)
+        val df =DecimalFormat("#.##")
+
+
+
+
+        return resultado
+
+
+    }
+    fun setPeso( num :Int){
+       val textoPeso = tvPeso.text.toString().toInt()+ num
+        pesoActual=textoPeso
+        tvPeso.text = pesoActual.toString()
+
+//        tvPeso.setText(pesoActual.toString() + " kg")
 
     }
 
     fun setEdad(){
-        tvEdad.setText(edadActual.toString() + " años")
+        tvEdad.setText(edadActual.toString())
     }
 
 
