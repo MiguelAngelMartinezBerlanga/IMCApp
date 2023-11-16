@@ -114,7 +114,7 @@ class ImcCalculator : AppCompatActivity() {
        var peso : Double = tvPeso.text.toString().toDouble()
 
        var resultado:Double = peso/(altura*altura)
-        val df =DecimalFormat("#.##")
+//        val df =DecimalFormat("#.##")
 
 
 
@@ -125,24 +125,25 @@ class ImcCalculator : AppCompatActivity() {
     }
     fun setPeso( num :Int){
        val textoPeso = tvPeso.text.toString().toInt()+ num
-        pesoActual=textoPeso
-        tvPeso.text = pesoActual.toString()
+//        pesoActual=textoPeso
+//        tvPeso.text = pesoActual.toString()
 
+        tvPeso.text = textoPeso.toString()
 //        tvPeso.setText(pesoActual.toString() + " kg")
 
     }
 
     fun setEdad(){
-        tvEdad.setText(edadActual.toString())
+        tvEdad.setText(edadActual.toString() + " años")
     }
 
 
 
     fun getBackgroundColor(isComponentSelected:Boolean):Int{
         val colorReference = if(isComponentSelected) {
-            R.color.bg_comp_sel
+            R.color.bg_comp_sel // true
         } else {
-            R.color.bg_comp
+            R.color.bg_comp // false
         }
         return ContextCompat.getColor(this,colorReference)
     }

@@ -5,69 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultadoIMC"
-    android:background="@color/bg_comp"
+    android:background="@color/bg_app"
     >
 
 
     <TextView
+        android:id="@+id/tvTexto"
         android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
         android:text="TU RESULTADO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="39dp"
+
         ></TextView>
 
     <androidx.cardview.widget.CardView
 
 
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="500dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintTop_toBottomOf="@id/tvTexto"
         app:cardCornerRadius="16dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
         >
-
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@color/bg_comp"
             android:orientation="vertical"
-            android:background="@color/bg_button">
+            android:gravity="center"
+            >
+
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/tvInforme"
-                android:layout_width="150dp"
+                android:layout_width="162dp"
                 android:layout_height="wrap_content"
                 android:text="SOBREPESO"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textStyle="bold"
+                android:textColor="@color/orange"
                 android:textSize="20dp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="30dp"
+
                 >
 
-            </TextView>
 
+            </TextView>
 
             <TextView
                 android:id="@+id/tvResultado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="34"
+                android:textSize="70dp"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                tools:text="34"
+                android:textColor="@color/white"
+
+                android:layout_marginTop="70dp"
                 >
 
             </TextView>
@@ -78,16 +85,15 @@
                 android:layout_height="wrap_content"
                 android:text="EXPLICACION"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="20dp"
                 android:textStyle="bold"
-                android:textSize="20dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center"
+
+
+                >
 
             </TextView>
-
-
-
-
-
 
 
         </LinearLayout>
